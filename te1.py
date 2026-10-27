@@ -18,4 +18,12 @@ print(d[::-1])
 print(d[4:100])
 
 # 给定两个浮点数 判断它的和是否为0.3
+def float_eq(a,b,eps = 1e-9,abs_tol = 0.0):
+    diff = abs(a-b)
+    if diff <= eps:
+        return  True
+    return diff <= eps * max(abs(a),abs(b))
+print(float_eq(1e-12,0.0))
+print(float_eq(1e-12,0.0,abs_tol=1e-9))
+
 
